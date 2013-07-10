@@ -18,3 +18,8 @@
 #alert {
   color: red;
 }
+
+.userinfo {
+  font-size: 50px;
+  font-weight: bolder;
+}
