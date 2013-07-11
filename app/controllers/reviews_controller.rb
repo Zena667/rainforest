@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   # The load product method retreives the appropriate product so a new review can be associated to it.
   before_filter :load_product
+  before_filter :ensure_logged_in, :only => [:edit, :create, :show, :update, :destroy]
 
   def show
     @review = Review.find(params[:id])
