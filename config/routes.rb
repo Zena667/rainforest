@@ -4,8 +4,6 @@ Rainforest::Application.routes.draw do
 
   get "reviews/new"
 
-  get "reviews/edit"
-
   get "sessions/new"
 
   get "sessions/create"
