@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
       if @review.update_attributes(params[:review])
-        redirect_to edit_product_review_path(@product, @review), notice: 'Review was successfully updated.'
+        redirect_to @product, notice: 'Review was successfully updated.'
       else
         render action: "edit"
       end   
@@ -45,6 +45,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
+    redirect_to @product
   end
 
   private
