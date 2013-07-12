@@ -13,4 +13,11 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
   end
+
+  factory :review do
+    comment "my comment"
+    # user_id @u.id
+    # product_id @p.id
+  end
+
 end
