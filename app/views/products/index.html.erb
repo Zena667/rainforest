@@ -3,7 +3,7 @@
 
 <% @products.each do |product| %>
   <p><%= product[:name] %>, <%= truncate(product[:description], length: 50) %></p>
-  <p><%= number_to_currency(product[:price_in_cents].to_f/100) %>
+  <p>$<%= product.formatted_price %>
   <p><%= link_to "Show Product", "products/#{product.id}" %></p>
 <% end %>
 

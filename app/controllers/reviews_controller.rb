@@ -21,10 +21,14 @@ class ReviewsController < ApplicationController
         :user_id    => current_user.id
       )
 
-    if @review.save
-        redirect_to products_path, notice: 'Review created successfully'
-      else
-        render :action => :show
+    if @product.users.include? current_user
+      redirect_to @product, notice: 'Cannot review a product more then once.' 
+    else
+      if @review.save
+          redirect_to products_path, notice: 'Review created successfully'
+        else
+          render :action => :show
+      end
     end
   end
 

@@ -6,4 +6,11 @@ FactoryGirl.define do
     description "A desk lamp perfect for the modern office."
     price_in_cents 10000
   end
+
+  factory :user do
+    name "Zena"
+    email "zena@hotmail.com"
+    password "password"
+    password_confirmation "password"
+  end
 end
